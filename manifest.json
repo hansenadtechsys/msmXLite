@@ -27,7 +27,7 @@
     ],
     "theme_color":"#000000",
     "background_color":"#000000",
-    "start_url": "/MSM-XL/",
+    "start_url": "https://hansenadtechsys.github.io/msmXLite",
     "display": "standalone",
     "orientation": "portrait"
 }
