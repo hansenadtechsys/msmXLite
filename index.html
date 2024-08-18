@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mobile Spread Manager XLite</title>
+        <link rel="stylesheet" href="index.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>Mobile Spread Manager XLite</h1>
+            <form id="MSMXL">
+                <input type="text" name="equipment-input" id="equipment-input" placeholder="Tractor ID" />
+                <input type="text" name="client-input" id="client-input" placeholder="Client" />
+                <input type="text" name="location-input" id="location-input" placeholder="Location"/>
+                <input type="text" name="task-input" id="task-input" placeholder="Task"/>
+                <input type="number" step=".001" name="weight-input" id="weight-input" placeholder="Load Weight"/>
+                <input type="number" step=".001" name="area-input" id="area-input" placeholder="Total Area"/>
+                <input type="submit" id="new-load-submit" value="Add Load"/>
+            </form>
+        </header>
+        <main>
+            <section class="statistics">
+                <h2>Statistics</h2>
+                <hr/>
+                <table id="statTable">
+                    <tr>
+                        <td><label class="statLabel" name="weightStatLabel">Total Weight (Pounds)</label> </td>
+                        <td id="weightstatpounds"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="statLabel" name="weightStatLabel">Total Weight (Tons)</label></td>
+                        <td id="weightstattons"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="statLabel" name="AreaStatLabel">Load Area</label></td>
+                        <td id="areastat"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="statLabel" name="LoadRateLabel">Load Rate</label></td>
+                        <td id="loadRate"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="statLabel" name="OverallRateLabel">Overall Rate</label></td>
+                        <td id="overallRate"></td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="load-list">
+                <h2>Loads</h2>
+                <hr/>
+                <div id="loads">
+                    <table id="loadTable" name="loadTable">
+                        <thead>
+                            <th>Timestamp</th>
+                            <th>Equipment</th>
+                            <th>Client</th>
+                            <th>Location</th>
+                            <th>Task</th>
+                            <th>Weight</th>
+                            <th>Area</th>
+                            <th class="hidden"></th>
+                        </thead>
+                        <tbody id="loadBody" name="loadBody">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </section>
+        </main>
+        <script src="Dexie.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
