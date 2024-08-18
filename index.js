@@ -93,12 +93,18 @@ const getAreas=async(equip,client, location, task)=>{
     // loadArea=parseFloat(d0['area'])-parseFloat(d1['area']);
     a0=0;
     a1=0;
-    loadsumraw.forEach((obj)=>{
-        a0=a1;
-        a1=parseFloat(obj['area']);
-    });
-    loadArea=a0-a1;
-    totalArea=a1;  
+    if(loadsumraw.length>1){
+        loadsumraw.forEach((obj)=>{
+            a0=a1;
+            a1=parseFloat(obj['area']);
+        });
+        loadArea=a0-a1;
+        totalArea=a1;          
+    }else{
+        loadArea=loadsumraw[0]['area'];
+        totalArea=loadsumraw[0]['area'];
+    }
+
 };
 function getTimestamp(){
     date=new Date();
