@@ -99,7 +99,7 @@ const getAreas=async(equip,client, location, task)=>{
             a1=parseFloat(obj['area']);
         });
         loadArea=a0-a1;
-        totalArea=a1;          
+        totalArea=a0;          
     }else{
         loadArea=loadsumraw[0]['area'];
         totalArea=loadsumraw[0]['area'];
