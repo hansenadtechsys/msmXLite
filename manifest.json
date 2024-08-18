@@ -1,33 +1,33 @@
 {
-    name: "Mobile Spread Manager XLite",
-    short_name:"MSMXL",
-    icons:[
+    "name": "Mobile Spread Manager XLite",
+    "short_name":"MSMXL",
+    "icons":[
         {
-            src: "./assets/icon-100.png",
-            sizes: "100x100",
-            type: "image/png",            
+            "src": "./assets/icon-100.png",
+            "sizes": "100x100",
+            "type": "image/png"            
         },
         {
-            src: "./assets/icon-150.png",
-            sizes: "150x150",
-            type: "image/png",            
+            "src": "./assets/icon-150.png",
+            "sizes": "150x150",
+            "type": "image/png"           
         },
         {
-            src: "./assets/icon-200.png",
-            sizes: "200x200",
-            type: "image/png",            
+            "src": "./assets/icon-200.png",
+            "sizes": "200x200",
+            "type": "image/png"            
         },
         {
-            src: "./assets/icon-500.png",
-            sizes: "500x500",
-            type: "image/png",            
-        },
+            "src": "./assets/icon-500.png",
+            "sizes": "500x500",
+            "type": "image/png"            
+        }
                         
 
     ],
-    theme_color:"#FFFFFF",
-    background_color:"#FFFFFF",
-    start_url: "/MSM-XL/",
-    display: "standalone",
-    orientation: "portrait",
-};
+    "theme_color":"#000000",
+    "background_color":"#000000",
+    "start_url": "/MSM-XL/",
+    "display": "standalone",
+    "orientation": "portrait"
+}
