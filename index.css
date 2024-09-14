@@ -219,10 +219,15 @@ main {
 
 }
 #updateButton{
-    color:white;
-    text-align:right;
-    margin-right: 10px;
-    width:75%
+    color: White;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, gray, gray,gray);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+    visibility: visible;
 }
 #versionInfo{
     width:100%;
