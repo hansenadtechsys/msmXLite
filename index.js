@@ -29,6 +29,7 @@ const weight_in = document.querySelector("#weight-input");
 const area_in = document.querySelector("#area-input");
 const load_list = document.querySelector("#loads");
 const load_table_body=document.querySelector("#loadBody");
+const load_count=document.querySelector("#loadCount");
 
 eid_in.addEventListener("change",prepareupdateStats);
 eid_in.addEventListener("click",()=>{eid_in.value="";prepareupdateStats;});
@@ -40,11 +41,13 @@ task_in.addEventListener("change",prepareupdateStats);
 task_in.addEventListener("click",()=>{task_in.value="";prepareupdateStats;});
 weight_in.addEventListener("change",prepareupdateStats);
 area_in.addEventListener("change",prepareupdateStats);
+document.querySelector("#updateButton").addEventListener("click",update);
 
 weightTotal=0;
 loadArea=0;
 loadWeight=0;
 totalArea=0;
+loadCount=0;
 
 form.onsubmit = async (event)=>{
     event.preventDefault();
@@ -104,8 +107,10 @@ const getAreas=async(equip,client, location, task)=>{
         loadArea=loadsumraw[0]['area'];
         totalArea=loadsumraw[0]['area'];
     }
-
 };
+const getLoadCount= async(equip,client, location, task)=>{
+    loadCount=await db.loads.where({client:client,location:location,task:task,equipment_id:equip}).count();
+}
 function getTimestamp(){
     date=new Date();
     year=date.getFullYear();
@@ -125,12 +130,13 @@ const updateStats=async()=>{
     await getWeightTotal(equip,client,location,task);
     await getLoads(equip,client,location,task);
     await getAreas(equip,client,location,task);
-
+    await getLoadCount(equip,client,location,task);
     document.querySelector("#weightstatpounds").innerHTML=weightTotal;
     document.querySelector("#weightstattons").innerHTML=weightTotal/2000; 
     document.querySelector("#areastat").innerHTML=loadArea;
     document.querySelector("#loadRate").innerHTML=loadWeight/loadArea;
     document.querySelector("#overallRate").innerHTML=weightTotal/totalArea;
+    load_count.innerHTML=loadCount;
 }
 function prepareupdateStats(){
     try{
@@ -144,5 +150,13 @@ function prepareupdateStats(){
     }
 
     updateStats();
+}
+
+function update(){
+    if(window.confirm("Update Application?")){
+        window.location.reload();
+    }else{
+
+    }
 }
 prepareupdateStats();

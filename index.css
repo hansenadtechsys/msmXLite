@@ -214,3 +214,17 @@ main {
 .statistics {
     padding: 1rem;
 }
+.footer{
+    color:white;
+
+}
+#updateButton{
+    color:white;
+    text-align:right;
+    margin-right: 10px;
+    width:75%
+}
+#versionInfo{
+    width:100%;
+    text-align: left;
+}
