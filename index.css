@@ -6,6 +6,9 @@
     --pink: #EC4899;
     --purple: #8B5CF6;
     --light: #EEE;
+    --blue: #000044;
+    --border:#223344;
+    --inputbg:#88bb9E;
 }
 * {
     margin: 0;
@@ -39,81 +42,93 @@ h1{
 }
 input, button {
     appearance: none;
-    border: none;
+    border: 1px solid var(--border);
     outline: none;
     background: none;
 }
 #client-input {
     flex: 1 1 0%;
-    background-color: var(--darker);
+    background-color: var(--blue);
     padding: 1rem;
     border-radius: 1rem;
     margin-right: 1rem;
     color: var(--light);
     font-size: 1.25rem;
+    font-weight: bolder;
 }
 #client-input::placeholder {
-    color: var(--grey);
+    color: var(--light);
+    font-weight:bolder;
 }
 #location-input {
     flex: 1 1 0%;
-    background-color: var(--darker);
+    background-color: var(--blue);
     padding: 1rem;
     border-radius: 1rem;
     margin-right: 1rem;
     color: var(--light);
     font-size: 1.25rem;
+    font-weight:bolder;
 }
 #location-input::placeholder {
-    color: var(--grey);
+    color: var(--light);
+    font-weight: bolder;
 }
 #task-input {
     flex: 1 1 0%;
-    background-color: var(--darker);
+    background-color: var(--blue);
     padding: 1rem;
     border-radius: 1rem;
     margin-right: 1rem;
     color: var(--light);
     font-size: 1.25rem;
+    font-weight:bolder;
 }
 #task-input::placeholder {
-    color: var(--grey);
+    color: var(--light);
+    font-weight: bolder;
 }
 #weight-input {
     flex: 1 1 0%;
-    background-color: var(--darker);
+    background-color: var(--blue);
     padding: 1rem;
     border-radius: 1rem;
     margin-right: 1rem;
     color: var(--light);
     font-size: 1.25rem;
+    font-weight: bolder;
 }
 #weight-input::placeholder {
-    color: var(--grey);
+    color: var(--light);
+    font-weight:bolder;
 }
 #area-input {
     flex: 1 1 0%;
-    background-color: var(--darker);
+    background-color: var(--blue);
     padding: 1rem;
     border-radius: 1rem;
     margin-right: 1rem;
     color: var(--light);
     font-size: 1.25rem;
+    font-weight:bolder;
 }
 #equipment-input {
     flex: 1 1 0%;
-    background-color: var(--darker);
+    background-color: var(--blue);
     padding: 1rem;
     border-radius: 1rem;
     margin-right: 1rem;
     color: var(--light);
     font-size: 1.25rem;
+    font-weight: bolder;
 }
 #equipment-input::placeholder {
-    color: var(--grey);
+    color: var(--light);
+    font-weight:bolder;
 }
 #area-input::placeholder {
-    color: var(--grey);
+    color: var(--light);
+    font-weight:bolder;
 }
 #new-load-submit {
     color: var(--pink);
