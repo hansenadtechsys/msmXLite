@@ -31,14 +31,40 @@ const load_list = document.querySelector("#loads");
 const load_table_body=document.querySelector("#loadBody");
 const load_count=document.querySelector("#loadCount");
 
+// Long-press helper: clears the input after ~500ms hold
+function addLongPressClear(input){
+    let timer = null;
+    const clear = () => {
+        input.value = "";
+        prepareupdateStats();
+    };
+    const start = (e) => {
+        // Don't interfere with normal focus/typing
+        if(e.type === "mousedown" && e.button !== 0) return;
+        timer = setTimeout(clear, 500);
+    };
+    const cancel = () => {
+        if(timer){
+            clearTimeout(timer);
+            timer = null;
+        }
+    };
+    input.addEventListener("mousedown", start);
+    input.addEventListener("touchstart", start, {passive: true});
+    input.addEventListener("mouseup", cancel);
+    input.addEventListener("mouseleave", cancel);
+    input.addEventListener("touchend", cancel);
+    input.addEventListener("touchcancel", cancel);
+}
+
 eid_in.addEventListener("change",prepareupdateStats);
-eid_in.addEventListener("click",()=>{eid_in.value="";prepareupdateStats;});
+addLongPressClear(eid_in);
 client_in.addEventListener("change",prepareupdateStats);
-client_in.addEventListener("click",()=>{client_in.value="";prepareupdateStats;});
+addLongPressClear(client_in);
 location_in.addEventListener("change",prepareupdateStats);
-location_in.addEventListener("click",()=>{location_in.value="";prepareupdateStats;});
+addLongPressClear(location_in);
 task_in.addEventListener("change",prepareupdateStats);
-task_in.addEventListener("click",()=>{task_in.value="";prepareupdateStats;});
+addLongPressClear(task_in);
 weight_in.addEventListener("change",prepareupdateStats);
 area_in.addEventListener("change",prepareupdateStats);
 document.querySelector("#updateButton").addEventListener("click",update);
