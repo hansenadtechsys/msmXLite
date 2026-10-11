@@ -29,5 +29,5 @@
     "background_color":"#000000",
     "start_url": "https://hansenadtechsys.github.io/msmXLite",
     "display": "standalone",
-    "orientation": "portrait"
+    "orientation": "landscape"
 }
