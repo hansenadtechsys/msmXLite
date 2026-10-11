@@ -152,11 +152,27 @@ function prepareupdateStats(){
     updateStats();
 }
 
-function update(){
-    if(window.confirm("Update Application?")){
-        window.location.reload();
-    }else{
-
+async function update(){
+    if(!window.confirm("Update Application? This will clear the cache and reload.")){
+        return;
     }
+    try{
+        // Unregister all service workers
+        if('serviceWorker' in navigator){
+            const registrations = await navigator.serviceWorker.getRegistrations();
+            for(const registration of registrations){
+                await registration.unregister();
+            }
+        }
+        // Clear all caches
+        if('caches' in window){
+            const cacheNames = await caches.keys();
+            await Promise.all(cacheNames.map(name => caches.delete(name)));
+        }
+    }catch(e){
+        console.error('Error clearing cache:', e);
+    }
+    // Hard reload
+    window.location.reload(true);
 }
 prepareupdateStats();
